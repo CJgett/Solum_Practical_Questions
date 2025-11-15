@@ -1,0 +1,174 @@
+:root {
+  --bg: #f6f7de;
+  --text: #002927; 
+  --warning: #9F142D;
+}
+
+@font-face {
+ font-family: "Figtree";
+ src: local("Figtree"),
+  url("./assets/fonts/Figtree/Figtree-VariableFont_wght.woff2") format("woff2");
+ font-weight: bold;
+}
+
+body {
+  justify-content: center;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: "Figtree";
+}
+
+#root {
+  background-color: transparent;
+  z-index: 0;
+}
+
+h1 {
+  text-align: center;
+  font-size: 30px;
+}
+
+button {
+  max-width: 200px;
+  min-height: 10px;
+  background-color: var(--text);
+  color: var(--bg);
+  transition: color .25s, background-color .25s;
+  border: 2px solid var(--text);
+  &:hover {
+    color: var(--text);
+    background-color: var(--bg);
+    transition: color .25s, background-color .25s;
+  }
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+  height: 1px;
+  &:not(.eyecon){
+    transition: height .5s ease-in;
+  }
+}
+
+
+
+.logo {
+  width: 150px;
+  margin-bottom: 30px;
+}
+
+.icon-button {
+    position: absolute;
+    cursor: pointer;
+    right: 0;
+    background-color: transparent;
+    border: none;
+    width: 30px;
+    height: 30px;
+    &:hover {
+      background-color: transparent;
+      border: none;
+      transition: none;
+    }
+  .eyecon {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 5px;
+    top: 0;
+    pointer-events: none;
+  }
+}
+
+.login-container {
+  background: transparent;
+  height: 30vh;
+  min-height: 500px;
+  width: 50vw;
+  max-width: 500px;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content:"";
+    background-color: var(--text); 
+    border-radius: 25px;
+    opacity: .2;
+    height: 30vh;
+    min-height: 500px;
+    width: 50vw;
+    max-width: 500px;
+    min-width: 300px;
+    z-index: -1;
+    filter: blur(.5px);
+  }
+  :not(.hidden):not(button, .icon-button, .eyecon){
+    transition: visibility 0s .5s, height .5s ease-in, opacity .7s ease-in .5s;
+  }
+  .login {
+    width: 75%;
+    &:not(.hidden) {
+      height: 70%;
+    }
+
+    .invalid-creds {
+      color: var(--warning);
+      height: auto;
+    }
+  }
+
+  .welcome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    &:not(.hidden) {
+      height: 35%;
+    }
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
+
+  .form-field {
+    display:flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+
+    input {
+      min-height: 30px;
+      width: 98%;
+      background-color: var(--bg);
+      border: 1.7px solid var(--text);
+      border-radius: 4px;
+      color: var(--text);
+
+      &.checked:invalid {
+        box-shadow: 0 0 10px var(--warning);
+        border-color: var(--warning);
+      }
+    }
+  }
+
+  .password-field {
+    display: flex;
+    gap: 15px;
+    align-items: center;    
+    position: relative;
+  }
+}
+
+ 
