@@ -11,7 +11,7 @@ To run my solutions to Problems A and B, simply clone this repository, then do o
 ## Problem C: Login Form Frontend
 ### utilizes React and Vite
 
-The login form can be viewed at https://cjgett.github.io/frontend_login_example/
+The login form can be viewed at https://cjgett.github.io/Solum_Practical_Questions/
 
 If you'd like to run it locally, simply download and navigate to the "C" folder, then run the following commands in your termainal:
 ```
